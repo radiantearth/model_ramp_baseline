@@ -63,13 +63,6 @@ docker build -t radiantearth/model_ramp_bootstrap:1-gpu -f Dockerfile_gpu .
 
 ## Run Model to Generate New Inferences
 
-{{
-
-:pushpin: Model developer: do not commit training data to the data folder on
-this repo, this is only a placeholder to run the model locally for inferencing.
-
-}}
-
 1. Prepare your input and output data folders. The `data/` folder in this repository
     contains some placeholder files to guide you.
 

@@ -12,7 +12,7 @@ if [[ -z "${OUTPUT_DATA}" ]]; then
     exit 1
 fi
 
-python {{repository_name}}/main_inferencing.py \
-    --model_dir=${INPUT_DATA}/checkpoint \
-    --chips_dir=${INPUT_DATA}/chips \
+python model_ramp_bootstrap/get_model_predictions.py \
+    --model_dir=${INPUT_DATA}/checkpoint.tf \
+    --images_dir=${INPUT_DATA}/chips \
     --output_dir=${OUTPUT_DATA}

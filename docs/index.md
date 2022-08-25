@@ -2,9 +2,9 @@
 
 {{ stac.properties.description }}
 
-![{{stac.id}}](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/odk_sample_agricultural_dataset.png)
+![model_ramp_bootstrap_v1](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/odk_sample_agricultural_dataset.png)
 
-MLHub model id: `{{stac.id}}`. Browse on [Radiant MLHub](https://mlhub.earth/model/{{stac.id}}).
+MLHub model id: `model_ramp_bootstrap_v1`. Browse on [Radiant MLHub](https://mlhub.earth/model/model_ramp_bootstrap_v1).
 
 ## Related MLHub Dataset {{ (Optional) }}
 

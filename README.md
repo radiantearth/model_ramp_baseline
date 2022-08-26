@@ -19,10 +19,10 @@ and other details in the [model documentation](/docs/index.md).
 
 ## Hardware Requirements
 
-|Inferencing|Training|
-|-----------|--------|
-|{{int}}GB RAM | {{int}}GB RAM|
-|           | NVIDIA GPU |
+|            |Inferencing|Training|
+|------------|-----------|--------|
+| RAM        | 4 GB RAM    | [View RAMP model card](https://rampml.global/ramp-model-card/) |
+| NVIDIA GPU | optional  | [required](https://rampml.global/ramp-model-card/) |
 
 ## Get Started With Inferencing
 

@@ -1,8 +1,10 @@
-# Dockerfile for image tagged model_ramp_bootstrap:1
+# Dockerfile for image tagged radiantearth/model_ramp_bootstrap:1
 
 FROM tensorflow/tensorflow:2.8.2
 
 WORKDIR /tf
+
+COPY . .
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -14,15 +16,11 @@ RUN apt-get update && \
         data/input/checkpoint \
         data/output && \
     pip install --upgrade pip && \
+    pip install . && \
+    pip install solaris/ && \
     apt-get clean -y && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
-
-COPY . .
-
-# TODO: optimize RUN commands
-RUN pip install . && \
-    pip install solaris/
 
 ENV RAMP_HOME=/tf
 

@@ -1,12 +1,27 @@
-# Dockerfile for image tagged model_ramp_bootstrap:1-gpu
-
-# TODO: optimize RUN and COPY commands to minimal number of layers.
+# Dockerfile for image tagged radiantearth/model_ramp_bootstrap:1-gpu
 
 FROM tensorflow/tensorflow:2.8.2-gpu
 
-WORKDIR /model
-COPY . .
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+WORKDIR /tf
 
-ENTRYPOINT [ "bash", "run_model.sh" ]
+COPY . .
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        gdal-bin \
+        libgdal-dev \
+        python3-opencv && \
+    mkdir -p \
+        data/input/images \
+        data/input/checkpoint \
+        data/output && \
+    pip install --upgrade pip && \
+    pip install . && \
+    pip install solaris/ && \
+    apt-get clean -y && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV RAMP_HOME=/tf
+
+CMD ["/tf/run_model.sh"]

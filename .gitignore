@@ -3,11 +3,16 @@ Makefile
 
 data/input/chips/*.tif
 data/output/*.tif
+data/output/*.geojson
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# QGIS projects
+*.qgz
+*.qgs
 
 # C extensions
 *.so

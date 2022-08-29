@@ -1,9 +1,9 @@
 .DS_Store
 Makefile
 
-data/input/chips/*.tif
-data/output/*.tif
-data/output/*.geojson
+data/input/**/*.tif
+data/output/**/*.tif
+data/output/**/*.geojson
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -23,7 +23,7 @@ python model_ramp_bootstrap/polygonize_multimasks.py \
     --input_dir=${OUTPUT_DATA} \
     --output_dir=${OUTPUT_DATA}/raw_polygonized_buildings/
 
-echo "remove small slivers (<1m^2) from polygons..."
+echo "remove small slivers (<2m^2) from polygons..."
 python model_ramp_bootstrap/remove_slivers.py \
     --label_file_dir=${OUTPUT_DATA}/raw_polygonized_buildings/ \
     --filtered_file_dir=${OUTPUT_DATA}/ \

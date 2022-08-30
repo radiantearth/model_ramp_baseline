@@ -93,6 +93,8 @@ docker build -t radiantearth/model_ramp_bootstrap:1-gpu -f Dockerfile_gpu .
 
 3. Run the appropriate Docker Compose command for your system:
 
+    Use either `docker compose` or `docker-compose` depending on your system.
+
     ```bash
     # cpu
     docker compose up model_ramp_bootstrap_v1_cpu

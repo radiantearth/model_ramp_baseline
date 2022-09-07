@@ -1,4 +1,4 @@
-# Replicable AI for Microplanning (RAMP) Bootstrap Model
+# Replicable AI for Microplanning (Ramp) Bootstrap Model
 
 {{ stac.properties.description }}
 
@@ -21,7 +21,7 @@ and other details in the [model documentation](/docs/index.md).
 
 |            |Inferencing|Training|
 |------------|-----------|--------|
-| RAM        | 4 GB RAM    | [View RAMP model card](https://rampml.global/ramp-model-card/) |
+| RAM        | 4 GB RAM    | [View Ramp model card](https://rampml.global/ramp-model-card/) |
 | NVIDIA GPU | optional  | [required](https://rampml.global/ramp-model-card/) |
 
 ## Get Started With Inferencing

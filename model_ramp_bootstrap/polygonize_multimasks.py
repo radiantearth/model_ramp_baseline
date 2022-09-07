@@ -1,3 +1,12 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
+ 
+ 
 import os, argparse, sys
 from pathlib import Path
 
@@ -10,6 +19,7 @@ from tqdm import tqdm
 from ramp.utils.mask_to_vec_utils import binary_mask_from_multichannel_mask, binary_mask_to_geojson
 
 # adding logging
+# options for log levels: INFO, WARNING, DEBUG
 import logging
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
@@ -19,7 +29,10 @@ log.addHandler(ch)
 
 def main():
 
-    parser = argparse.ArgumentParser(description="Create geojson polygon outputs from multichannel masks")
+    parser = argparse.ArgumentParser(description=''' 
+    Create matching geojson polygon outputs from a directory of multichannel masks.
+    Example: polygonize_multimasks.py -in multimask_dir -out polygons_dir.
+    ''',formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('-in', '--input_dir', type=dir_path, required=True, help=r'Path to directory containing input multichannel masks.')
     parser.add_argument('-out', '--output_dir', type=str, required=True, help=r'Path to output directory containing polygonized data')
     args = parser.parse_args()

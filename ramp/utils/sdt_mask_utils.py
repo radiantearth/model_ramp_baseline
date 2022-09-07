@@ -1,3 +1,13 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
+
+
+
 import numpy as np
 import skfmm
 from osgeo import gdal, ogr

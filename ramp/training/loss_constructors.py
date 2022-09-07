@@ -1,3 +1,10 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
 # adding logging
 import logging
 log = logging.getLogger(__name__)

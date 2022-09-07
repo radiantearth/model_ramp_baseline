@@ -1,3 +1,12 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
+ 
+ 
 import os, sys
 from pathlib import Path
 import rasterio as rio
@@ -12,7 +21,6 @@ from ramp.utils.file_utils import get_basename
 from ramp.utils.img_utils import to_channels_last, to_channels_first
 from ramp.data_mgmt.display_data import get_mask_from_prediction
 
-
 def rasterio_get_image_tensor(open_rio_image):
     img = open_rio_image.read()
     # rasterio images are channel-first, we need channels last
@@ -21,8 +29,22 @@ def rasterio_get_image_tensor(open_rio_image):
     return img/np.max(img)
 
 
+# adding logging
+# some options for log levels: INFO, WARNING, DEBUG
+import logging
+log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+log.addHandler(ch)
+
 def main():
-    parser = argparse.ArgumentParser(description="Produces output masks from input chips")
+
+    parser = argparse.ArgumentParser(description=''' 
+    Produces output predicted 4-channel masks from input chips.
+
+    Example: get_model_predictions.py -mod model_dir -idir chips -odir predicted_masks. 
+    ''',formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('-mod', '--model_dir', type=str, required=True, help="Path to directory containing tensorflow model")
     parser.add_argument('-idir', '--images_dir', type=str, required = True, help='Input geotiff chips directory')
     parser.add_argument('-odir', '--output_dir', type=str, required = True, help='Output geotiff predicted masks directory')

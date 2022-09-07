@@ -1,6 +1,4 @@
 import yaml
-# from ..nets import zoo
-
 
 def parse(path):
     """Parse a config file for running a model.

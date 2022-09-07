@@ -1,4 +1,11 @@
 
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
 
 def get_effunet_model(cfg):
     from ..models.effunet_1 import get_effunet 

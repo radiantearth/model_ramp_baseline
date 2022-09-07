@@ -1,3 +1,11 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
+
 
 from .img_utils import create_gdal_dataset_from_mask_tensor
 from osgeo import gdal, ogr, osr
@@ -47,8 +55,9 @@ def binary_mask_from_multichannel_mask(multimask):
     (classes: background:0, building:1, boundary:2, close-contact-point:3)
     '''
 
-    # aggregate building and boundary points, remaining points are 0
-    foregd_mask = np.logical_or(multimask == 1, multimask == 2)
+    # aggregate building points, remaining points are 0
+    # 20220808: can't include boundary points, in tight places you get blobs.
+    foregd_mask = (multimask == 1)
     return foregd_mask.astype(np.uint8)
 
 

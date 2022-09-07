@@ -1,3 +1,10 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
 from tensorflow.keras.callbacks import *
 from tensorflow.keras import backend as K
 import numpy as np

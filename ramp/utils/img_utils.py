@@ -1,6 +1,14 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
+
 import numpy as np
 from osgeo import gdal, gdalnumeric as gdn, gdalconst as gdc
-from tensorflow.image import resize
+from skimage.transform import resize
 from .ramp_exceptions import GdalReadError
 
 # adding logging
@@ -95,20 +103,23 @@ def dhash(image, hashSize=8):
     :param np.ndarray image: channels-last RGB image
     '''
 	
+    # raise NotImplementedError("call to resize is failing in tensorflow, needs fixing")
+
     # convert the image to grayscale and resize the grayscale image,
 	  # adding a single column (width).
     # Note that we are using tensorflow.image.resize(), which requires us to add 
     # a trivial 3rd dimension (using np.newaxis) to the grayscale image before passing it.
     gray = convert_RGB_array_to_grayscale(image)
-    resized = resize(gray[:,:,np.newaxis], (hashSize + 1, hashSize), method='nearest')
+    # gray_3band = gray[:,:,np.newaxis]
+    resized = resize(gray, (hashSize + 1, hashSize), order=0)
 
 
 	# compute the (relative) horizontal gradient between adjacent
-	# column pixels. The result is an array of 0s and 1s.
+	# column pixels. The result is an array of 0s and 1s of size (hashsize, hashsize)
     diff = resized[:, 1:] > resized[:, :-1]
 
-	# convert the difference image to a hash and return it
-    return sum([2 ** i for (i, v) in enumerate(diff.numpy().flatten()) if v])
+	# convert the difference image to a hash (integer) and return it
+    return sum([2 ** i for (i, v) in enumerate(diff.flatten()) if v])
 
 
 ############################################################

@@ -1,3 +1,12 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
+ 
+ 
 from itertools import count
 import os, argparse, sys, shutil
 from pathlib import Path
@@ -10,6 +19,7 @@ from ramp.utils.geo_utils import gpd_add_area_perim
 import csv
 
 # adding logging
+# options for log levels: INFO, WARNING, DEBUG
 import logging
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
@@ -75,9 +85,12 @@ def main():
 
     parser = argparse.ArgumentParser(
         description='''
-        Remove buildings smaller than a certain size from all labels in a directory.
-        Results will be written to a newly created sibling folder named
-        ''')
+        Remove buildings with area (in sq m) smaller than a threshold from all geojson label files in a directory,
+        and write the filtered geojson files to another directory.
+
+        Example: remove_slivers.py -ldir input_labels_dir -fdir output_labels_dir -min 10.0
+        
+        ''',formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('-ldir', '--label_file_dir', type =str, required = True, help='Path to directory containing input label files')
     parser.add_argument('-fdir', '--filtered_file_dir', type=str, required = False, default=None, help='Name of output directory for filtered label files')
     parser.add_argument('-min', '--min_sqmeters', type=float, required=True, help="minimum size buildings to keep, in sq meters")

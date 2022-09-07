@@ -1,5 +1,10 @@
 
-
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
 
 import tensorflow as tf
 from tensorflow.keras.layers.experimental import preprocessing 
@@ -422,3 +427,25 @@ def test_batches_from_gtiff_dirs_with_names(
 
       return data_batches
       
+
+###########################################################################################
+## AUGUST 3rd 2022: modifications for using weighted loss functions
+## for details on this approach to using class weights in loss computation see this site:
+## https://www.tensorflow.org/tutorials/images/segmentation#optional_imbalanced_classes_and_class_weights 
+###########################################################################################
+
+def add_class_weights(chip, label, class_weights):
+  ''' 
+  create a class weight image with the same shape as the 'label' tensor,
+  and return it along with the chip and label. 
+  class_weights: a float tensorflow (not numpy) array of length equal to the number of classes,
+  with weight values to be applied in the loss computation for each class.
+  '''
+
+  # normalize the class weights so they sum to 1
+  class_weights = class_weights/tf.reduce_sum(class_weights)
+
+  # create the weight tensor. 'gather' works by creating a tensor the same size as the 
+  # 'label' object, and using the class index at each pixel of the label to index into the class_weights values.
+  weight_tensor = tf.gather(class_weights, tf.cast(label, tf.int32))
+  return chip, label, weight_tensor

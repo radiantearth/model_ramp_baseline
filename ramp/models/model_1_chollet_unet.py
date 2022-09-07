@@ -1,10 +1,17 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
 from tensorflow import keras
 from tensorflow.keras import layers
 
 
 def get_model_1_chollet_unet(img_size, num_classes):
     '''
-    This is the baseline model for the project. It's simple and susceptible to overfit. 
+    This was once the baseline model for the ramp project. It's simple and susceptible to overfit. 
     This model is a unet-like model, written by Chollet in his segmentation example at this webpage:
     https://keras.io/examples/vision/oxford_pets_image_segmentation/.
     It's not a transfer model. All parameters are trainable.

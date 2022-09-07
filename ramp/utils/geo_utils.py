@@ -1,3 +1,9 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
 
 import numpy as np
 import geopandas as gpd
@@ -28,11 +34,12 @@ def gpd_add_area_perim(geodf):
     '''
     if not (geodf.crs and geodf.crs.is_geographic):
         log.error('geodataframe does not have a geographic coordinate system')
-        raise TypeError('geodataframe should have geographic coordinate system')
+        raise TypeError('the geodataframe should have a geographic coordinate system')
         
     geod = geodf.crs.get_geod()
 
-    # Note: define these internally to this function, so they have access to the geod object.
+    # Note: I'm defining these functions internally to gpd_add_area_perim, 
+    # so they have access to the geod object.
 
     def area_calc(geom):
         if geom.geom_type not in ['MultiPolygon','Polygon']:
@@ -86,8 +93,8 @@ def get_polygon_indices_to_merge(df, pairs_df):
         polyid_left = row1["polyid_left"]
         polyid_right = row1["polyid_right"]
 
-        if polyid_left == 324 or polyid_right== 324:
-            print("stop")
+        # if polyid_left == 324 or polyid_right== 324:
+        #     print("stop")
 
         # loop over equivalence classes
         for a_class in equivalence_classes:

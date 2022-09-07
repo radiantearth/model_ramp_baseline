@@ -2,8 +2,10 @@
 Makefile
 
 data/input/**/*.tif
+data/input/**/*.xml
 data/output/**/*.tif
 data/output/**/*.geojson
+data/output/**/*.xml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -63,7 +63,7 @@ else:
                  'affine>=2.3.0',
                  'albumentations>=0.4.3',
                  'fiona>=1.7.13',
-                 'gdal>=3.0.2'
+                 'gdal',
                  'geopandas>=0.7.0',
                  'matplotlib>=3.1.2',
                  'networkx>=2.4',
@@ -80,10 +80,7 @@ else:
                  'shapely>=1.7.1dev',
                  'tqdm>=4.40.0',
                  'urllib3>=1.25.7',
-                 # guidorice: remove tensorflow, this part of solaris is not being used in model_ramp_bootstrap_v1
-                 # guidorice: this line installing an different version of tensorflow than the base Docker image.
-                 # 'tensorflow>=2.0'
-                ]
+                 ]
 
 
 extra_reqs = {

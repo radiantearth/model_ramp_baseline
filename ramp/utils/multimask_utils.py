@@ -1,3 +1,11 @@
+
+#################################################################
+#
+# created for ramp project, August 2022
+#
+#################################################################
+
+
 ### Forked from solaris sol.vector.mask on 20220701
 
 # adding logging
@@ -13,7 +21,7 @@ from solaris.utils.tile import save_empty_geojson
 
 # note that affine_transform_gdf from this import will be overwritten by the local version.
 # replace with import by name!
-from solaris.vector.polygon import convert_poly_coords
+from solaris.vector.polygon import convert_poly_coords, geojson_to_px_gdf
 import numpy as np
 from shapely.geometry import shape
 from shapely.geometry import Polygon
@@ -112,6 +120,13 @@ def df_to_px_mask(
             'If saving output to file, `reference_im` must be provided.')
 
     mask_dict = {}
+
+    meters = kwargs.get('meters',False)
+
+    # 20220802 bugfix: clean up geometries before buffer_df_geoms is called
+    df = buffer_df_geoms(df, 0, meters=meters, reference_im=reference_im)
+
+
     if 'footprint' in channels:
         mask_dict['footprint'] = shapes_mask(
             df=df, 
@@ -632,6 +647,85 @@ def preds_to_binary(pred_arr, channel_scaling=None, bg_threshold=0):
     mask_arr = (pred_arr > bg_threshold).astype('uint8')
 
     return mask_arr*255
+
+def binary_mask_to_geodataframe(binary_array,
+                                affine_object=None,
+                                df_crs="EPSG:4326", 
+                                do_transform=False,
+                                simplify=False,
+                                tolerance=0.5,
+                                min_area=0,
+                                **kwargs):
+    """
+    Get a polygon geodataframe from a binary mask.
+    Simplified version of 'mask_to_poly_geojson' that takes an affine object for transformation
+    instead of a reference image.
+
+    Arguments
+    ---------
+    binary_array : :class:`numpy.ndarray`
+        A 2D array of integers with values in 0,1.
+    affine_object : object of class Affine 
+        for calculating the final geotransform.
+        Required if 'do_transform' is True
+    df_crs: EPSG string for the CRS of the output geodataframe
+        Required if 'do_transform' is true
+    min_area : int, optional
+        The minimum area of a polygon to retain. Filtering is done AFTER
+        any coordinate transformation, and therefore will be in destination
+        units.
+    simplify : bool, optional
+        If ``True``, will use the Douglas-Peucker algorithm to simplify edges,
+        saving memory and processing time later. Defaults to ``False``.
+    tolerance : float, optional
+        The tolerance value to use for simplification with the Douglas-Peucker
+        algorithm. Defaults to ``0.5``. Only has an effect if
+        ``simplify=True``.
+
+    Returns
+    -------
+    gdf : :class:`geopandas.GeoDataFrame`
+        A GeoDataFrame of polygons.
+
+    """
+
+    if do_transform and affine_object is None:
+        raise ValueError(
+            'Coordinate transformation requires an input affine transformation.')
+
+    if do_transform:
+        transform = affine_object
+        crs = _check_crs(df_crs)
+    else:
+        transform = Affine(1, 0, 0, 0, 1, 0)  # identity transform
+        crs = rasterio.crs.CRS()
+
+    # pixels not in 'mask' are excluded from feature generation,
+    # so we generate only buildings
+    mask = binary_array > 0
+    mask = mask.astype('uint8')
+
+    polygon_generator = features.shapes(binary_array,
+                                        transform=transform,
+                                        mask=mask)
+    polygons = []
+    values = []  # pixel values for the polygon in mask_arr
+    for polygon, value in polygon_generator:
+        p = shape(polygon).buffer(0.0)
+        if p.area >= min_area:
+            polygons.append(shape(polygon).buffer(0.0))
+            values.append(value)
+
+    polygon_gdf = gpd.GeoDataFrame({'geometry': polygons, 'value': values},
+                                   crs=crs.to_wkt())
+    if simplify:
+        polygon_gdf['geometry'] = polygon_gdf['geometry'].apply(
+            lambda x: x.simplify(tolerance=tolerance)
+        )
+
+    return polygon_gdf
+
+
 
 
 def mask_to_poly_geojson(pred_arr, channel_scaling=None, reference_im=None,

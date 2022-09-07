@@ -1,3 +1,11 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
+
 import os
 import io
 import numpy as np

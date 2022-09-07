@@ -1,3 +1,11 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
+
 import numpy as np
 import geopandas as gpd
 import pandas as pd
@@ -54,7 +62,7 @@ def get_iou_df(test_df, truth_df,iou_thresh=0.5, remove_matching_element=True):
 
     return  gpd.GeoDataFrame(test_result_list)
 
-def get_iou_accuracy_metrics(test_data, truth_data, threshold=0.5):
+def get_iou_accuracy_metrics(test_data, truth_data, size_threshold=None, iou_threshold=0.5):
     '''
     returns dictionary containing accuracy metrics
 
@@ -65,9 +73,18 @@ def get_iou_accuracy_metrics(test_data, truth_data, threshold=0.5):
     threshold (float, 0<threshold<1): above which value of IoU a detection is considered to have occurred
     '''
 
-    
-    n_truth = len(truth_data)
-    n_test = len(test_data)
+    f_truth_data = truth_data
+    f_test_data = test_data
+
+    # apply filtering
+    if size_threshold:
+        if "area_m2" in truth_data.keys() and "area_m2" in test_data.keys():
+            f_truth_data = truth_data[truth_data["area_m2"] >= size_threshold]
+            f_test_data = test_data[test_data["area_m2"] >= size_threshold]
+        else:
+            log.warning("No area_m2 attribute on buildings: cannot apply building size filtering")
+    n_truth = len(f_truth_data)
+    n_test = len(f_test_data)
     if n_test == 0 or n_truth==0:
         metrics = {
             'n_detections': n_test, 
@@ -81,8 +98,8 @@ def get_iou_accuracy_metrics(test_data, truth_data, threshold=0.5):
         }
         return metrics
 
-    iou_df = get_iou_df(test_data, truth_data, iou_thresh=threshold)
-    assert len(truth_data) == n_truth
+    iou_df = get_iou_df(f_test_data, f_truth_data, iou_thresh=iou_threshold)
+    assert len(f_truth_data) == n_truth
     true_positives = iou_df[iou_df['match_id'] != -1]
     n_matched = len(true_positives)
     recall = n_matched/n_truth

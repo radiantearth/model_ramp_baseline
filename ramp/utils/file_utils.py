@@ -1,3 +1,10 @@
+#################################################################
+#
+# created for ramp project, August 2022
+# Author: carolyn.johnston@dev.global
+#
+#################################################################
+
 import os, sys, re, shutil
 from random import sample as rsample
 from pathlib import Path

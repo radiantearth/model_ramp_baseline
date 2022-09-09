@@ -21,5 +21,5 @@ git+git://github.com/toblerity/shapely.git@master#egg=shapely-1.7.1dev
 torchvision>=0.5.0
 tqdm>=4.40.0
 urllib3>=1.25.7
-# guidorice: remove tensorflow, this part of solaris is not being used in model_ramp_bootstrap_v1
+# guidorice: remove tensorflow, this part of solaris is not being used in model_ramp_baseline_v1
 # tensorflow==1.13.1

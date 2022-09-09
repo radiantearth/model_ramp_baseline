@@ -1,4 +1,4 @@
-# Dockerfile for image tagged radiantearth/model_ramp_bootstrap:1
+# Dockerfile for image tagged radiantearth/model_ramp_baseline:1
 
 FROM tensorflow/tensorflow:2.8.2
 

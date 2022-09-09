@@ -2,9 +2,9 @@
 
 {{ stac.properties.description }}
 
-![model_ramp_bootstrap_v1](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/ramp_mesopotamia_st_vincent.png)
+![model_ramp_baseline_v1](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/ramp_mesopotamia_st_vincent.png)
 
-MLHub model id: `model_ramp_bootstrap_v1`. Browse on [Radiant MLHub](https://mlhub.earth/model/model_ramp_bootstrap_v1).
+MLHub model id: `model_ramp_baseline_v1`. Browse on [Radiant MLHub](https://mlhub.earth/model/model_ramp_baseline_v1).
 
 ## ML Model Documentation
 
@@ -32,8 +32,8 @@ model checkpoint file. Either install `git lfs` support for your git client,
 use the official Mac or Windows GitHub client to clone this repository.
 
 ```bash
-git clone https://github.com/radiantearth/model_ramp_bootstrap.git
-cd model_ramp_bootstrap/
+git clone https://github.com/radiantearth/model_ramp_baseline.git
+cd model_ramp_baseline/
 ```
 
 After cloning the model repository, you can use the Docker Compose runtime
@@ -45,9 +45,9 @@ Pull pre-built image from Docker Hub (recommended):
 
 ```bash
 # cpu
-docker pull docker.io/radiantearth/model_ramp_bootstrap:1
+docker pull docker.io/radiantearth/model_ramp_baseline:1
 # optional, for NVIDIA gpu
-docker pull docker.io/radiantearth/model_ramp_bootstrap:1-gpu
+docker pull docker.io/radiantearth/model_ramp_baseline:1-gpu
 
 ```
 
@@ -55,9 +55,9 @@ Or build image from source:
 
 ```bash
 # cpu
-docker build -t radiantearth/model_ramp_bootstrap:1 -f Dockerfile_cpu .
+docker build -t radiantearth/model_ramp_baseline:1 -f Dockerfile_cpu .
 # for NVIDIA gpu
-docker build -t radiantearth/model_ramp_bootstrap:1-gpu -f Dockerfile_gpu .
+docker build -t radiantearth/model_ramp_baseline:1-gpu -f Dockerfile_gpu .
 
 ```
 
@@ -87,8 +87,8 @@ docker build -t radiantearth/model_ramp_bootstrap:1-gpu -f Dockerfile_gpu .
 
     ```bash
     # change paths to your actual input and output folders
-    export INPUT_DATA="/home/my_user/model_ramp_bootstrap/data/input/"
-    export OUTPUT_DATA="/home/my_user/model_ramp_bootstrap/data/output/"
+    export INPUT_DATA="/home/my_user/model_ramp_baseline/data/input/"
+    export OUTPUT_DATA="/home/my_user/model_ramp_baseline/data/output/"
     ```
 
 3. Run the appropriate Docker Compose command for your system:
@@ -97,9 +97,9 @@ docker build -t radiantearth/model_ramp_bootstrap:1-gpu -f Dockerfile_gpu .
 
     ```bash
     # cpu
-    docker compose up model_ramp_bootstrap_v1_cpu
+    docker compose up model_ramp_baseline_v1_cpu
     # NVIDIA gpu driver
-    docker compose up model_ramp_bootstrap_v1_gpu
+    docker compose up model_ramp_baseline_v1_gpu
     ```
 
 4. Wait for the `docker compose` to finish running, then inspect the

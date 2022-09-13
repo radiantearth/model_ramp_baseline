@@ -204,7 +204,6 @@ info@dev.global
       },
       'type': 'Feature'
     }
-  }
   ]
 }
 ```

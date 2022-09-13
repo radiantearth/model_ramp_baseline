@@ -242,37 +242,20 @@ this model for new inferencing.
 
 ## Methodology
 
-{{
-
-Use this section to provide more information to the reader about the model. Be
-as descriptive as possible. The suggested sub-sections are as following:
-
-}}
+This baseline building footprint detection model is trained to facilitate mapping building footprints in regions that are poorly mapped and using high resolution satellite imagery. The model was developed as part of the Replicable AI for Microplanning (Ramp) project. You can read a full documentation of the Ramp project, including the model training on the [Ramp website](https://rampml.global/project-introduction/). The model card is also accessible [here](https://rampml.global/ramp-model-card/). 
 
 ### Training
 
-{{
+The model is designed to work with satellite imagery of 50 cm or higher spatial resolution. The training data for this model covers multiple regions across several Low and Middle Income Countries (LMIC) including Ghana, India, Malawi, Myanmar, Oman, Sierra Leone, South Sudan and St Vincent.
 
-Explain training steps such as augmentations and preprocessing used on image
-before training.
-
-}}
+Two augmentation functions were applied to the training data: 1) Random Rotation, and 2) Random Change of Brightness, Contrast and Saturation (aka ColorJitter). Training uses a batch size of 16 with an Adam optimizer at a Learning Rate (LR) of 3E-04 and an early stopping function. 
 
 ### Model
 
-{{
-
-Expalin the model and why you chose the model in this section. A graphical representation
-of the model architecture could be helpful to individuals or organizations who would 
-wish to replicate the workflow and reproduce the model results or to change the model 
-architecture and improve the results.  
-
-}}
+This model is developed using the Eff-UNet model architecture outlined in this [CVPR 2020 Paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf). For a detailed architecture of the model, refer to Figures 3-5 in the paper. 
 
 ### Structure of Output Data
 
-{{
+The model generates a multi-mask prediction including the following classes: `background`, `buildings`, `boundary`,`close_contact`. Output masks will have the same basename as the input chips, with the suffix `pred.tif`. The suffix `pred.tif` is used so that predicted masks will not be confused with truth masks.
 
-Explain output file names and formats, interpretation, classes, etc.
-
-}}
+These predictions are then post-processed to a binary mask for 'building' and 'background', and from there the polygons are delineated. The final prediction is one single GeoJSON file for all the chips input to the model (tile boundaries are removed).

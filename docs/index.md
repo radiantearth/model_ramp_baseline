@@ -53,8 +53,8 @@ info@dev.global
   "type": "FeatureCollection",
   "features": [
     {
-      'geometry': {
-        'coordinates': [
+      "geometry": {
+        "coordinates": [
           [
             [-0.24987, 5.573258],
             [5.647172, 5.573258],
@@ -63,17 +63,17 @@ info@dev.global
             [-0.24987, 5.573258]
           ]
         ],
-        'type': 'Polygon'
+        "type": "Polygon"
       },
-      'id': 0,
-      'properties': {
-        'ID': 0
+      "id": 0,
+      "properties": {
+        "ID": 0
       },
-      'type': 'Feature'
+      "type": "Feature"
     },
     {
-      'geometry': {
-        'coordinates': [
+      "geometry": {
+        "coordinates": [
           [
             [75.893292, 12.015134],
             [12.981374, 12.015134],
@@ -82,17 +82,17 @@ info@dev.global
             [75.893292, 12.015134]
           ]
         ],
-        'type': 'Polygon'
+        "type": "Polygon"
       },
-      'id': 1,
-      'properties': {
-        'ID': 1
+      "id": 1,
+      "properties": {
+        "ID": 1
       },
-      'type': 'Feature'
+      "type": "Feature"
     },
     {
-      'geometry': {
-        'coordinates': [
+      "geometry": {
+        "coordinates": [
           [
             [33.964771, -11.488537],
             [-11.390598, -11.488537],
@@ -101,17 +101,17 @@ info@dev.global
             [33.964771, -11.488537]
           ]
         ],
-        'type': 'Polygon'
+        "type": "Polygon"
       },
-      'id': 2,
-      'properties': {
-        'ID': 2
+      "id": 2,
+      "properties": {
+        "ID": 2
       },
-      'type': 'Feature'
+      "type": "Feature"
     },
     {
-      'geometry': {
-        'coordinates': [
+      "geometry": {
+        "coordinates": [
           [
             [97.577051, 16.806055],
             [16.915819, 16.806055],
@@ -120,17 +120,17 @@ info@dev.global
             [97.577051, 16.806055]
           ]
         ],
-        'type': 'Polygon'
+        "type": "Polygon"
       },
-      'id': 3,
-      'properties': {
-        'ID': 3
+      "id": 3,
+      "properties": {
+        "ID": 3
       },
-      'type': 'Feature'
+      "type": "Feature"
     },
     {
-      'geometry': {
-        'coordinates': [
+      "geometry": {
+        "coordinates": [
           [
             [58.452592, 23.587606],
             [23.643006, 23.587606],
@@ -139,17 +139,17 @@ info@dev.global
             [58.452592, 23.587606]
           ]
         ],
-        'type': 'Polygon'
+        "type": "Polygon"
       },
-      'id': 4,
-      'properties': {
-        'ID': 4
+      "id": 4,
+      "properties": {
+        "ID": 4
       },
-      'type': 'Feature'
+      "type": "Feature"
     },
     {
-      'geometry': {
-        'coordinates': [
+      "geometry": {
+        "coordinates": [
           [
             [-11.772279, 7.921254],
             [7.98898, 7.921254],
@@ -158,17 +158,17 @@ info@dev.global
             [-11.772279, 7.921254]
           ]
         ],
-        'type': 'Polygon'
+        "type": "Polygon"
       },
-      'id': 5,
-      'properties': {
-        'ID': 5
+      "id": 5,
+      "properties": {
+        "ID": 5
       },
-      'type': 'Feature'
+      "type": "Feature"
     },
     {
-      'geometry': {
-        'coordinates': [
+      "geometry": {
+        "coordinates": [
           [
             [29.777953, 9.228564],
             [9.342134, 9.228564],
@@ -177,17 +177,17 @@ info@dev.global
             [29.777953, 9.228564]
           ]
         ],
-        'type': 'Polygon'
+        "type": "Polygon"
       },
-      'id': 6,
-      'properties': {
-        'ID': 6
+      "id": 6,
+      "properties": {
+        "ID": 6
       },
-      'type': 'Feature'
+      "type": "Feature"
     },
     {
-      'geometry': {
-        'coordinates': [
+      "geometry": {
+        "coordinates": [
           [
             [-61.259591, 13.123114],
             [13.201815, 13.123114],
@@ -196,13 +196,13 @@ info@dev.global
             [-61.259591, 13.123114]
           ]
         ],
-        'type': 'Polygon'
+        "type": "Polygon"
       },
-      'id': 7,
-      'properties': {
-        'ID': 7
+      "id": 7,
+      "properties": {
+        "ID": 7
       },
-      'type': 'Feature'
+      "type": "Feature"
     }
   ]
 }

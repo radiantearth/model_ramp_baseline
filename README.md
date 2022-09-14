@@ -45,6 +45,10 @@ cd model_ramp_baseline/
 After cloning the model repository, you can use the Docker Compose runtime
 files as described below.
 
+Please note: these command-line examples were tested on Linux and MacOS.
+Windows and WSL users may need to substitute appropriate commands, especially
+for setting environment variables.
+
 ## Pull or Build the Docker Image
 
 Pull pre-built image from Docker Hub (recommended):

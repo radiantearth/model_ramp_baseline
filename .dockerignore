@@ -2,6 +2,16 @@
 data/input
 data/output
 
+# most of the vendored solaris/ folder is not used.
+solaris/docs
+solaris/tests
+solaris/static
+solaris/solaris/nets
+solaris/solaris/data/*.geojson
+solaris/solaris/data/*.tif
+solaris/solaris/data/*.csv
+
+Makefile
 **/__pycache__
 **/.classpath
 **/.dockerignore

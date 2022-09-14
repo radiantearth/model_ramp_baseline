@@ -1,194 +1,105 @@
-# {{ stac.properties.title }}
+# Ramp Baseline Model for Building Footprint Segmentation
 
-{{ stac.properties.description }}
+The Replicable AI for Microplanning (Ramp) deep learning model is a semantic segmentation one which detects buildings from satellite imagery and delineates the footprints in low-and-middle-income countries (LMICs) using satellite imagery and enables in-country users to build their own deep learning models for their regions of interest. The architecture and approach were inspired by the Eff-UNet model outlined in this [CVPR 2020 Paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf).
 
-![{{stac.id}}](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/odk_sample_agricultural_dataset.png)
+![model_ramp_baseline_v1](https://radiantmlhub.blob.core.windows.net/frontend-ml-model-images/model_ramp_baseline_v1.png)
 
-MLHub model id: `{{stac.id}}`. Browse on [Radiant MLHub](https://mlhub.earth/model/{{stac.id}}).
+MLHub model id: `model_ramp_baseline_v1`. Browse on [Radiant MLHub](https://mlhub.earth/model/model_ramp_baseline_v1).
 
-## Related MLHub Dataset {{ (Optional) }}
+## Training Data
 
-{{
+- [Ghana Source](https://api.radiant.earth/mlhub/v1/collections/ramp_accra_ghana_source)
+- [Ghana Labels](https://api.radiant.earth/mlhub/v1/collections/ramp_accra_ghana_labels)
+- [India Source](https://api.radiant.earth/mlhub/v1/collections/ramp_karnataka_india_source)
+- [India Labels](https://api.radiant.earth/mlhub/v1/collections/ramp_karnataka_india_labels)
+- [Malawi Source](https://api.radiant.earth/mlhub/v1/collections/ramp_mzuzu_malawi_source)
+- [Malawi Labels](https://api.radiant.earth/mlhub/v1/collections/ramp_mzuzu_malawi_labels)
+- [Myanmar Source](https://api.radiant.earth/mlhub/v1/collections/ramp_hpa_an_myanmar_source)
+- [Myanmar Labels](https://api.radiant.earth/mlhub/v1/collections/ramp_hpa_an_myanmar_labels)
+- [Oman Source](https://api.radiant.earth/mlhub/v1/collections/ramp_muscat_oman_source)
+- [Oman Labels](https://api.radiant.earth/mlhub/v1/collections/ramp_muscat_oman_labels)
+- [Sierra Leone Source](https://api.radiant.earth/mlhub/v1/collections/ramp_manjama_sierra_leone_source)
+- [Sierra Leone Labels](https://api.radiant.earth/mlhub/v1/collections/ramp_manjama_sierra_leone_labels)
+- [South Sudan Source](https://api.radiant.earth/mlhub/v1/collections/ramp_bentiu_south_sudan_source)
+- [South Sudan Labels](https://api.radiant.earth/mlhub/v1/collections/ramp_bentiu_south_sudan_labels)
+- [St Vincent Source](https://api.radiant.earth/mlhub/v1/collections/ramp_mesopotamia_st_vincent_source)
+- [St Vincent Labels](https://api.radiant.earth/mlhub/v1/collections/ramp_mesopotamia_st_vincent_labels)
 
-If this model was based on a dataset which is already published to MLHub, enter that link here.
+## Related MLHub Dataset
 
-[https://mlhub.earth/data/ref_african_crops_kenya_02](https://mlhub.earth/data/ref_african_crops_kenya_02)
-
-}}
+[Ramp Building Footprint Datasets](https://mlhub.earth/datasets?search=ramp)
 
 ## Citation
 
-{{
-
-example:
-
-Amer, K. (2022) “A Spatio-Temporal Deep Learning-Based Crop Classification
-Model for Satellite Imagery”, Version 1.0, Radiant MLHub. [Date Accessed]
-Radiant MLHub. <https://doi.org/10.34911/rdnt.h28fju>
-
-}}
+DevGlobal (2022) “Ramp Baseline Model for Building Footprint Segmentation”, Version 1.0, Radiant MLHub. [Date Accessed]
+Radiant MLHub. <https://doi.org/10.34911/rdnt.1xe81y>
 
 ## License
 
-{{
+CC BY-NC 4.0
 
-example: CC-BY-4.0
+## Creator
 
-(update the LICENSE file in this repository to match the license)
-
-}}
-
-## Creator{{s}}
-
-{{
-
-example: Model creators and links go here (examples: Radiant Earth Foundation, Microsoft
-AI for Good Research Lab).
-
-}}
+[DevGlobal](https://dev.global/)
 
 ## Contact
 
-{{
-
-Contact email goes here (example: ml@radiant.earth)
-
-}}
+info@dev.global
 
 ## Applicable Spatial Extent
 
-{{
+[Download spatial_extent.geojson](./spatial_extent.geojson)
 
-Here please provide the applicable spatial extent, for new inferencing (this
-may be the same, or different than the spatial extent of the training data).
-Please provide the spatial extent bounding box as WKT text or GEOJSON text.
-
-```geojson
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "id": 1,
-      "properties": {
-        "ID": 0
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-              [-90,35],
-              [-90,30],
-              [-85,30],
-              [-85,35],
-              [-90,35]
-          ]
-        ]
-      }
-    }
-  ]
-}
-```
-
-<https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-geojson-and-topojson-maps>
-
-}}
+![spatial extent](./spatial_extent.png)
+© [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors
 
 ## Applicable Temporal Extent
 
-{{
-
-The recommended start/end date of imagery for new inferencing. Example:
-
 | Start | End |
 |-------|-----|
-| 2000-01-01 | present |
-
-}}
+| 2007-10-01 | present |
 
 ## Learning Approach
 
-{{
-
-The learning approach used to train the model. It is recommended that you use
-one of the values below, but other values are allowed.
-
-* Supervised
-* Unsupervised
-* Semi-supervised
-* Reinforcement-learning
-* Other (explain)
-
-Explain training steps such as augmentations and preprocessing used on image
-before training.
-
-A graphical representation of the model architecture within the documentation
-could be helpful to individuals or organizations who would wish to replicate
-workflow and reproduce same or even similar benchmark model results as well
-make specific changes within the architecture in an attempt to further improve
-it.
-
-}}
+Supervised
 
 ## Prediction Type
 
-{{
-
-The type of prediction that the model makes. It is recommended that you use one
-of the values below, but other values are allowed.
-
-* Object-detection
-* Classification
-* Segmentation
-* Regression
-* Other (explain)
-
-}}
+Segmentation
 
 ## Model Architecture
 
-{{
-
-Identifies the architecture employed by the model. This may include any string
-identifiers, but publishers are encouraged to use well-known identifiers
-whenever possible. More details than just “it’s a CNN”!
-
-}}
+Eff-UNet
 
 ## Training Operating System
 
-{{
-
-Identifies the operating system on which the model was trained.
-
-* Linux
-* Windows (win32)
-* Windows (cygwin)
-* MacOS (darwin)
-* Other (explain)
-
-}}
+Linux
 
 ## Training Processor Type
 
-{{
-
-The type of processor used during training. Must be one of "cpu" or "gpu".
-
-* cpu
-* gpu
-
-}}
+GPU
 
 ## Model Inferencing
 
 Review the [GitHub repository README](../README.md) to get started running
 this model for new inferencing.
 
-## Structure of Output Data
+## Methodology
 
-{{
+This baseline building footprint detection model is trained to facilitate mapping building footprints in regions that are poorly mapped and using high resolution satellite imagery. The model was developed as part of the Replicable AI for Microplanning (Ramp) project. You can read a full documentation of the Ramp project, including the model training on the [Ramp website](https://rampml.global/project-introduction/). The model card is also accessible [here](https://rampml.global/ramp-model-card/).
 
-Explain output file names and formats, interpretation, classes, etc.
+### Training
 
-}}
+The model is designed to work with satellite imagery of 50 cm or higher spatial resolution. The training data for this model covers multiple regions across several Low and Middle Income Countries (LMIC) including Ghana, India, Malawi, Myanmar, Oman, Sierra Leone, South Sudan and St Vincent.
+
+Two augmentation functions were applied to the training data: 1) Random Rotation, and 2) Random Change of Brightness, Contrast and Saturation (aka ColorJitter). Training uses a batch size of 16 with an Adam optimizer at a Learning Rate (LR) of 3E-04 and an early stopping function.
+
+### Model
+
+This model is developed using the Eff-UNet model architecture outlined in this [CVPR 2020 Paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf). For a detailed architecture of the model, refer to Figures 3-5 in the paper.
+
+### Structure of Output Data
+
+The model generates a multi-mask prediction including the following classes: `background`, `buildings`, `boundary`,`close_contact`. Output masks will have the same basename as the input chips, with the suffix `pred.tif`. The suffix `pred.tif` is used so that predicted masks will not be confused with truth masks.
+
+These predictions are then post-processed to a binary mask for 'building' and 'background', and from there the polygons are delineated. The final prediction is one single GeoJSON file for all the chips input to the model (tile boundaries are removed).

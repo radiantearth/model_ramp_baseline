@@ -1,8 +1,8 @@
 version: "3"
 services:
 
-  {{stac.id}}_cpu:
-    image: {{repository_name}}:1
+  model_ramp_baseline_v1_cpu:
+    image: radiantearth/model_ramp_baseline:1
     volumes:
       - "${INPUT_DATA}:/tf/data/input"
       - "${OUTPUT_DATA}:/tf/data/output"
@@ -10,14 +10,13 @@ services:
       - INPUT_DATA=/tf/data/input
       - OUTPUT_DATA=/tf/data/output
 
-  {{stac.id}}_gpu:
-    image: {{repository_name}}:1-gpu
+  model_ramp_baseline_v1_gpu:
+    image: radiantearth/model_ramp_baseline:1-gpu
     runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
+      - INPUT_DATA=/tf/data/input
+      - OUTPUT_DATA=/tf/data/output
     volumes:
       - "${INPUT_DATA}:/tf/data/input"
       - "${OUTPUT_DATA}:/tf/data/output"
-    environment:
-      - INPUT_DATA=/tf/data/input
-      - OUTPUT_DATA=/tf/data/output

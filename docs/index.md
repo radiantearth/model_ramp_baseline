@@ -1,6 +1,6 @@
 # Ramp Baseline Model for Building Footprint Segmentation
 
-The Replicable AI for Microplanning (Ramp) deep learning model is a semantic segmentation one which detects buildings from satellite imagery and delineates the footprints in low-and-middle-income countries (LMICs) using satellite imagery and enables in-country users to build their own deep learning models for their regions of interest. The architecture and approach were inspired by the Eff-UNet model outlined in this [CVPR 2020 Paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf). 
+The Replicable AI for Microplanning (Ramp) deep learning model is a semantic segmentation one which detects buildings from satellite imagery and delineates the footprints in low-and-middle-income countries (LMICs) using satellite imagery and enables in-country users to build their own deep learning models for their regions of interest. The architecture and approach were inspired by the Eff-UNet model outlined in this [CVPR 2020 Paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf).
 
 ![model_ramp_baseline_v1](https://radiantmlhub.blob.core.windows.net/frontend-ml-model-images/model_ramp_baseline_v1.png)
 
@@ -48,277 +48,10 @@ info@dev.global
 
 ## Applicable Spatial Extent
 
-```geojson
-{
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            -0.24987,
-                            5.573258
-                        ],
-                        [
-                            -0.24987,
-                            5.647172
-                        ],
-                        [
-                            -0.18988,
-                            5.647172
-                        ],
-                        [
-                            -0.18988,
-                            5.573258
-                        ],
-                        [
-                            -0.24987,
-                            5.573258
-                        ]
-                    ]
-                ]
-            },
-            "properties": {
-                "id": "ramp_accra_ghana_labels"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            75.893292,
-                            12.015134
-                        ],
-                        [
-                            75.893292,
-                            12.981374
-                        ],
-                        [
-                            76.014896,
-                            12.981374
-                        ],
-                        [
-                            76.014896,
-                            12.015134
-                        ],
-                        [
-                            75.893292,
-                            12.015134
-                        ]
-                    ]
-                ]
-            },
-            "properties": {
-                "id": "ramp_karnataka_india_labels"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            33.964771,
-                            -11.488537
-                        ],
-                        [
-                            33.964771,
-                            -11.390598
-                        ],
-                        [
-                            34.052217,
-                            -11.390598
-                        ],
-                        [
-                            34.052217,
-                            -11.488537
-                        ],
-                        [
-                            33.964771,
-                            -11.488537
-                        ]
-                    ]
-                ]
-            },
-            "properties": {
-                "id": "ramp_mzuzu_malawi_labels"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            97.577051,
-                            16.806055
-                        ],
-                        [
-                            97.577051,
-                            16.915819
-                        ],
-                        [
-                            97.697025,
-                            16.915819
-                        ],
-                        [
-                            97.697025,
-                            16.806055
-                        ],
-                        [
-                            97.577051,
-                            16.806055
-                        ]
-                    ]
-                ]
-            },
-            "properties": {
-                "id": "ramp_hpa_an_myanmar_labels"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            58.452592,
-                            23.587606
-                        ],
-                        [
-                            58.452592,
-                            23.643006
-                        ],
-                        [
-                            58.599653,
-                            23.643006
-                        ],
-                        [
-                            58.599653,
-                            23.587606
-                        ],
-                        [
-                            58.452592,
-                            23.587606
-                        ]
-                    ]
-                ]
-            },
-            "properties": {
-                "id": "ramp_muscat_oman_labels"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            -11.772279,
-                            7.921254
-                        ],
-                        [
-                            -11.772279,
-                            7.98898
-                        ],
-                        [
-                            -11.698137,
-                            7.98898
-                        ],
-                        [
-                            -11.698137,
-                            7.921254
-                        ],
-                        [
-                            -11.772279,
-                            7.921254
-                        ]
-                    ]
-                ]
-            },
-            "properties": {
-                "id": "ramp_manjama_sierra_leone_labels"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            29.777953,
-                            9.228564
-                        ],
-                        [
-                            29.777953,
-                            9.342134
-                        ],
-                        [
-                            29.831493,
-                            9.342134
-                        ],
-                        [
-                            29.831493,
-                            9.228564
-                        ],
-                        [
-                            29.777953,
-                            9.228564
-                        ]
-                    ]
-                ]
-            },
-            "properties": {
-                "id": "ramp_bentiu_south_sudan_labels"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            -61.259591,
-                            13.123114
-                        ],
-                        [
-                            -61.259591,
-                            13.201815
-                        ],
-                        [
-                            -61.154656,
-                            13.201815
-                        ],
-                        [
-                            -61.154656,
-                            13.123114
-                        ],
-                        [
-                            -61.259591,
-                            13.123114
-                        ]
-                    ]
-                ]
-            },
-            "properties": {
-                "id": "ramp_mesopotamia_st_vincent_labels"
-            }
-        }
-    ]
-}
-```
+[Download spatial_extent.geojson](./spatial_extent.geojson)
+
+![spatial extent](./spatial_extent.png)
+© [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors
 
 ## Applicable Temporal Extent
 
@@ -353,17 +86,17 @@ this model for new inferencing.
 
 ## Methodology
 
-This baseline building footprint detection model is trained to facilitate mapping building footprints in regions that are poorly mapped and using high resolution satellite imagery. The model was developed as part of the Replicable AI for Microplanning (Ramp) project. You can read a full documentation of the Ramp project, including the model training on the [Ramp website](https://rampml.global/project-introduction/). The model card is also accessible [here](https://rampml.global/ramp-model-card/). 
+This baseline building footprint detection model is trained to facilitate mapping building footprints in regions that are poorly mapped and using high resolution satellite imagery. The model was developed as part of the Replicable AI for Microplanning (Ramp) project. You can read a full documentation of the Ramp project, including the model training on the [Ramp website](https://rampml.global/project-introduction/). The model card is also accessible [here](https://rampml.global/ramp-model-card/).
 
 ### Training
 
 The model is designed to work with satellite imagery of 50 cm or higher spatial resolution. The training data for this model covers multiple regions across several Low and Middle Income Countries (LMIC) including Ghana, India, Malawi, Myanmar, Oman, Sierra Leone, South Sudan and St Vincent.
 
-Two augmentation functions were applied to the training data: 1) Random Rotation, and 2) Random Change of Brightness, Contrast and Saturation (aka ColorJitter). Training uses a batch size of 16 with an Adam optimizer at a Learning Rate (LR) of 3E-04 and an early stopping function. 
+Two augmentation functions were applied to the training data: 1) Random Rotation, and 2) Random Change of Brightness, Contrast and Saturation (aka ColorJitter). Training uses a batch size of 16 with an Adam optimizer at a Learning Rate (LR) of 3E-04 and an early stopping function.
 
 ### Model
 
-This model is developed using the Eff-UNet model architecture outlined in this [CVPR 2020 Paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf). For a detailed architecture of the model, refer to Figures 3-5 in the paper. 
+This model is developed using the Eff-UNet model architecture outlined in this [CVPR 2020 Paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf). For a detailed architecture of the model, refer to Figures 3-5 in the paper.
 
 ### Structure of Output Data
 

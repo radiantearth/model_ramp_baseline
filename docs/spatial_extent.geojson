@@ -1,0 +1,261 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": "ramp_accra_ghana_labels",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.24987,
+                            5.573258
+                        ],
+                        [
+                            -0.24987,
+                            5.647172
+                        ],
+                        [
+                            -0.18988,
+                            5.647172
+                        ],
+                        [
+                            -0.18988,
+                            5.573258
+                        ],
+                        [
+                            -0.24987,
+                            5.573258
+                        ]
+                    ]
+                ]
+            },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "id": "ramp_karnataka_india_labels",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            75.893292,
+                            12.015134
+                        ],
+                        [
+                            75.893292,
+                            12.981374
+                        ],
+                        [
+                            76.014896,
+                            12.981374
+                        ],
+                        [
+                            76.014896,
+                            12.015134
+                        ],
+                        [
+                            75.893292,
+                            12.015134
+                        ]
+                    ]
+                ]
+            },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "id": "ramp_mzuzu_malawi_labels",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            33.964771,
+                            -11.488537
+                        ],
+                        [
+                            33.964771,
+                            -11.390598
+                        ],
+                        [
+                            34.052217,
+                            -11.390598
+                        ],
+                        [
+                            34.052217,
+                            -11.488537
+                        ],
+                        [
+                            33.964771,
+                            -11.488537
+                        ]
+                    ]
+                ]
+            },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "id": "ramp_hpa_an_myanmar_labels",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            97.577051,
+                            16.806055
+                        ],
+                        [
+                            97.577051,
+                            16.915819
+                        ],
+                        [
+                            97.697025,
+                            16.915819
+                        ],
+                        [
+                            97.697025,
+                            16.806055
+                        ],
+                        [
+                            97.577051,
+                            16.806055
+                        ]
+                    ]
+                ]
+            },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "id": "ramp_muscat_oman_labels",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            58.452592,
+                            23.587606
+                        ],
+                        [
+                            58.452592,
+                            23.643006
+                        ],
+                        [
+                            58.599653,
+                            23.643006
+                        ],
+                        [
+                            58.599653,
+                            23.587606
+                        ],
+                        [
+                            58.452592,
+                            23.587606
+                        ]
+                    ]
+                ]
+            },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "id": "ramp_manjama_sierra_leone_labels",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -11.772279,
+                            7.921254
+                        ],
+                        [
+                            -11.772279,
+                            7.98898
+                        ],
+                        [
+                            -11.698137,
+                            7.98898
+                        ],
+                        [
+                            -11.698137,
+                            7.921254
+                        ],
+                        [
+                            -11.772279,
+                            7.921254
+                        ]
+                    ]
+                ]
+            },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "id": "ramp_bentiu_south_sudan_labels",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            29.777953,
+                            9.228564
+                        ],
+                        [
+                            29.777953,
+                            9.342134
+                        ],
+                        [
+                            29.831493,
+                            9.342134
+                        ],
+                        [
+                            29.831493,
+                            9.228564
+                        ],
+                        [
+                            29.777953,
+                            9.228564
+                        ]
+                    ]
+                ]
+            },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "id": "ramp_mesopotamia_st_vincent_labels",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -61.259591,
+                            13.123114
+                        ],
+                        [
+                            -61.259591,
+                            13.201815
+                        ],
+                        [
+                            -61.154656,
+                            13.201815
+                        ],
+                        [
+                            -61.154656,
+                            13.123114
+                        ],
+                        [
+                            -61.259591,
+                            13.123114
+                        ]
+                    ]
+                ]
+            },
+            "properties": {}
+        }
+    ]
+}

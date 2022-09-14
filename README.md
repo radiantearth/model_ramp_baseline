@@ -1,6 +1,12 @@
 # Replicable AI for Microplanning (Ramp) Bootstrap Model
 
-{{ stac.properties.description }}
+The Replicable AI for Microplanning (Ramp) deep learning model is a semantic
+segmentation one which detects buildings from satellite imagery and delineates
+the footprints in low-and-middle-income countries (LMICs) using satellite
+imagery and enables in-country users to build their own deep learning models
+for their regions of interest. The architecture and approach were inspired by
+the Eff-UNet model outlined in this
+[CVPR 2020 Paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf).
 
 ![model_ramp_baseline_v1](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/ramp_mesopotamia_st_vincent.png)
 
@@ -38,6 +44,10 @@ cd model_ramp_baseline/
 
 After cloning the model repository, you can use the Docker Compose runtime
 files as described below.
+
+Please note: these command-line examples were tested on Linux and MacOS.
+Windows and WSL users may need to substitute appropriate commands, especially
+for setting environment variables.
 
 ## Pull or Build the Docker Image
 

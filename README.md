@@ -8,7 +8,7 @@ for their regions of interest. The architecture and approach were inspired by
 the Eff-UNet model outlined in this
 [CVPR 2020 Paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf).
 
-![model_ramp_baseline_v1](https://radiantmlhub.blob.core.windows.net/frontend-dataset-images/ramp_mesopotamia_st_vincent.png)
+![model_ramp_baseline_v1](https://radiantmlhub.blob.core.windows.net/frontend-ml-model-images/model_ramp_baseline_v1.png)
 
 MLHub model id: `model_ramp_baseline_v1`. Browse on [Radiant MLHub](https://mlhub.earth/model/model_ramp_baseline_v1).
 

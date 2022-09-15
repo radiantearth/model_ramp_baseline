@@ -102,4 +102,7 @@ This model is developed using the Eff-UNet model architecture outlined in this [
 
 The model generates a multi-mask prediction including the following classes: `background`, `buildings`, `boundary`,`close_contact`. Output masks will have the same basename as the input chips, with the suffix `pred.tif`. The suffix `pred.tif` is used so that predicted masks will not be confused with truth masks.
 
-These predictions are then post-processed to a binary mask for 'building' and 'background', and from there the polygons are delineated. The final prediction is one single GeoJSON file for all the chips input to the model (tile boundaries are removed).
+These predictions are then post-processed to a binary mask for 'building' and
+'background', and from there the polygons are delineated. Polygons smaller than
+2 m<sup>2</sup> are removed. The final prediction is one GeoJSON file for each
+chip input to the model, with the suffix `pred.geojson`.

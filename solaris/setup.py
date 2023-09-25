@@ -69,7 +69,7 @@ else:
                  'networkx>=2.4',
                  'numpy>=1.17.3',
                  'opencv-python>=4.1',
-                 'pandas>=0.25.3',
+                 'pandas>=0.25.3,<=1.5.3',
                  'pyproj>=2.1',
                  'pyyaml>=5.2',
                  'rasterio>=1.0.23',
